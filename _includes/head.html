@@ -2,12 +2,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>AndyMorphs | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
+<title>{{site.title}} | {{page.title}} | {{site.description}}</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="AndyMorphs" />
+<meta property="og:title" content="{{page.title}}" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta name="description" content="{{site.description}}" />
+<meta property="og:description" content="{{site.description}}" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="AndyMorphs" />
@@ -15,9 +15,10 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="AndyMorphs" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"AndyMorphs","name":"AndyMorphs","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"{{site.description}}","headline":"{{page.title}}","name":"{{site.title}}","url":"{{ site.baseurl }}"}</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="{{ site.baseurl }}{% link assets/js/list.js %}"></script>
+<script src="{{ site.baseurl }}{% link assets/js/pico.js %}"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <link rel="stylesheet" href="{{ site.baseurl }}{% link assets/css/style.css %}">

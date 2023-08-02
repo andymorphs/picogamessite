@@ -484,7 +484,7 @@ var vars     =  {
 }
 
         var file = vars.file_location;
-
+        console.log(file);
 
 
   var window_width = window.innerWidth;

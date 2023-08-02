@@ -38,12 +38,15 @@ $(document).ready(function() {
         }
       }
 
-      // Extract unique types for the filter dropdown
-      var uniqueTypes = [...new Set(dataArray.map(item => item.type))];
+   // Extract unique types for the filter dropdown and remove spaces
+      var uniqueTypesSet = new Set(dataArray.flatMap(item => item.type.split("|").map(type => type.trim())));
+      var uniqueTypesArray = [...uniqueTypesSet];
 
-      // Populate the filterDropdown with unique types
+      // Populate the filterDropdown with unique types and remove spaces
       var filterDropdown = $("#filterDropdown");
-      uniqueTypes.forEach(type => {
+      filterDropdown.empty(); // Clear previous options
+      filterDropdown.append('<option value="">All Types</option>');
+      uniqueTypesArray.forEach(type => {
         var option = $("<option></option>").attr("value", type).text(type);
         filterDropdown.append(option);
       });
@@ -51,7 +54,7 @@ $(document).ready(function() {
       // Function to filter data based on the selected type
       function filterData(selectedType) {
         var filteredData = selectedType
-          ? dataArray.filter(item => item.type === selectedType)
+          ? dataArray.filter(item => item.type.includes(selectedType))
           : dataArray;
 
         // Sort the filtered data based on the selected option
@@ -61,6 +64,10 @@ $(document).ready(function() {
         } else if (sortOption === "date") {
           filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
+
+        // Update filtered results count
+        var filteredResultsCount = filteredData.length;
+        $("#filteredResultsCount").text(filteredResultsCount);
 
         // Clear the existing content of outputDiv
         outputDiv.empty();
@@ -97,6 +104,10 @@ $(document).ready(function() {
         selectedType = $(this).val();
         filterData(selectedType);
       });
+
+      // Update total results count
+      var totalResultsCount = dataArray.length;
+      $("#totalResultsCount").text(totalResultsCount);
     }
   });
 });

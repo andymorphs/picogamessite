@@ -1,5 +1,6 @@
 
 
+
 $(document).ready(function() {
   $.ajax({
     type: "GET",
@@ -10,7 +11,8 @@ $(document).ready(function() {
       var outputDiv = $("#output");
       var dataArray = []; // Array to store data for sorting
 
-      // ... existing code for creating divs for each row and extracting specific values ...
+      // ... your existing code for extracting data and sorting ...
+
       // Create divs for each row
       for (var j = 0; j < lines.length; j++) {
         var rowData = lines[j].split("\t");
@@ -35,42 +37,65 @@ $(document).ready(function() {
           });
         }
       }
-      // ... existing code for sorting dataArray based on title and appending sorted data to outputDiv ...
 
-      function sortData(sortOption) {
-        // Sort the dataArray based on the selected option
+      // Extract unique types for the filter dropdown
+      var uniqueTypes = [...new Set(dataArray.map(item => item.type))];
+
+      // Populate the filterDropdown with unique types
+      var filterDropdown = $("#filterDropdown");
+      uniqueTypes.forEach(type => {
+        var option = $("<option></option>").attr("value", type).text(type);
+        filterDropdown.append(option);
+      });
+
+      // Function to filter data based on the selected type
+      function filterData(selectedType) {
+        var filteredData = selectedType
+          ? dataArray.filter(item => item.type === selectedType)
+          : dataArray;
+
+        // Sort the filtered data based on the selected option
+        var sortOption = $("#sortDropdown").val();
         if (sortOption === "az") {
-          dataArray.sort((a, b) => a.title.localeCompare(b.title));
+          filteredData.sort((a, b) => a.title.localeCompare(b.title));
         } else if (sortOption === "date") {
-          dataArray.sort((a, b) => new Date(a.date) - new Date(b.date));
+          filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
 
         // Clear the existing content of outputDiv
         outputDiv.empty();
 
-        // Create divs for each row based on sorted dataArray
-        for (var i = 0; i < dataArray.length; i++) {
-          var dataItem = dataArray[i];
+        // Create divs for each row based on sorted filteredData
+        for (var i = 0; i < filteredData.length; i++) {
+          var dataItem = filteredData[i];
           var tr_html = '<div class="row-col" data-id="name">' +
                             //'<div class="image-icon" style="background-image: url(/images/' + lowert +'.jpg), url(/images/placeholder-images-image_large.png)"></div>' +
-                            '<div class="col" data-id="name"><span>' + dataItem.title +'</span></div>' +
-                            '<div class="col" data-id="time"><span>' + dataItem.price +'</span></div>' + 
-                            '<div class="col" data-id="time"><span>' + dataItem.type +'</span></div>' +   
-                            '<div class="col" data-id="time"><span>' + dataItem.date +'</span></div>' +    
+                            '<div class="col" data-id="name">' + dataItem.title +'</div>' +
+                            '<div class="col" data-id="time">' + dataItem.price +'</div>' + 
+                            '<div class="col" data-id="time">' + dataItem.type +'</div>' +   
+                            '<div class="col" data-id="time">' + dataItem.area +'</div>' + 
+                            '<div class="col" data-id="time">' + dataItem.date +'</div>' +    
                           '</div>';
 
           outputDiv.append(tr_html);
         }
       }
 
-      // Initial sorting on page load
+      // Initial sorting and filtering on page load
       var sortOption = "az"; // Default: Sort A-Z
-      sortData(sortOption);
+      var selectedType = ""; // Default: Show all types
+      filterData(selectedType);
 
       // Handle sort dropdown change event
       $("#sortDropdown").change(function() {
         sortOption = $(this).val();
-        sortData(sortOption);
+        filterData(selectedType);
+      });
+
+      // Handle filter dropdown change event
+      $("#filterDropdown").change(function() {
+        selectedType = $(this).val();
+        filterData(selectedType);
       });
     }
   });

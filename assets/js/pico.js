@@ -464,7 +464,7 @@ var vars     =  {
   },
   cssid: '',
   mode: 'search',
-  file_location: '../assets/tsv/pico.tsv',
+  file_location: '/assets/tsv/pico.tsv',
   file_location_entry: '',
   image_location: '',
   entry_location: '/',

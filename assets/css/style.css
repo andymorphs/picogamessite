@@ -21,3 +21,9 @@
 .col {
     flex-basis: 25%;
 }
+
+@media screen and (max-width: 600px){
+    .site-nav a {
+        color: #000000!important;
+    }
+}

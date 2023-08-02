@@ -80,7 +80,6 @@ $(document).ready(function() {
                             '<div class="col" data-id="name">' + dataItem.title +'</div>' +
                             '<div class="col" data-id="time">' + dataItem.price +'</div>' + 
                             '<div class="col" data-id="time">' + dataItem.type +'</div>' +   
-                            '<div class="col" data-id="time">' + dataItem.area +'</div>' + 
                             '<div class="col" data-id="time">' + dataItem.date +'</div>' +    
                           '</div>';
 

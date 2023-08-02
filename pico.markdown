@@ -1,9 +1,8 @@
 ---
 layout: pico
-title: Pico
+title: Pico Games List
 permalink: /pico-games/
 ---
 
 # {{page.title}}
 
-I make YouTube Videos

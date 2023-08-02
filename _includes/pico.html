@@ -4,13 +4,23 @@
     <div>Total Results: <span id="totalResultsCount">0</span></div>
     <div>Filtered Results: <span id="filteredResultsCount">0</span></div>
   </div>
-  <select id="sortDropdown">
-    <option value="az">Sort A-Z</option>
-    <option value="date">Sort by Date</option>
-  </select>
-  <select id="filterDropdown">
-    <option value="">All Types</option>
-  </select>
+  <div>
+    <!-- Add this input field where users can type their search query -->
+    <input type="text" id="searchInput" placeholder="Search Titles">
+    Sort by:
+    <select id="sortDropdown">
+      <option value="az">Sort Title A-Z</option>
+      <option value="za">Sort Title Z-A</option>
+      <option value="date">Sort by Date (Oldest First)</option>
+      <option value="newest-date">Sort by Date (Newest First)</option>
+      <option value="price-asc">Sort Price (Low to High)</option>
+      <option value="price-desc">Sort Price (High to Low)</option>
+    </select>
+    Filter by Type:
+    <select id="filterDropdown">
+      <option value="">All Types</option>
+    </select>
+  </div>
 
 <div id="output">
 </div>

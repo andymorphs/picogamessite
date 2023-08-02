@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function() {
   $.ajax({
     type: "GET",
@@ -38,9 +35,12 @@ $(document).ready(function() {
         }
       }
 
-   // Extract unique types for the filter dropdown and remove spaces
+     // Extract unique types for the filter dropdown and remove spaces
       var uniqueTypesSet = new Set(dataArray.flatMap(item => item.type.split("|").map(type => type.trim())));
       var uniqueTypesArray = [...uniqueTypesSet];
+
+      // Sort the unique types alphabetically
+      uniqueTypesArray.sort();
 
       // Populate the filterDropdown with unique types and remove spaces
       var filterDropdown = $("#filterDropdown");
@@ -52,17 +52,39 @@ $(document).ready(function() {
       });
 
       // Function to filter data based on the selected type
-      function filterData(selectedType) {
+      function filterData(selectedType, searchQuery) {
         var filteredData = selectedType
           ? dataArray.filter(item => item.type.includes(selectedType))
           : dataArray;
+
+        // Filter the data based on the search query
+        if (searchQuery) {
+          searchQuery = searchQuery.toLowerCase();
+          filteredData = filteredData.filter(item => item.title.toLowerCase().includes(searchQuery));
+        }
 
         // Sort the filtered data based on the selected option
         var sortOption = $("#sortDropdown").val();
         if (sortOption === "az") {
           filteredData.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sortOption === "za") {
+          filteredData.sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortOption === "date") {
           filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
+        } else if (sortOption === "newest-date") {
+          filteredData.sort((a, b) => new Date(b.date) - new Date(a.date));
+        } else if (sortOption === "price-asc") {
+          filteredData.sort((a, b) => {
+            const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+            const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+            return priceA - priceB;
+          });
+        } else if (sortOption === "price-desc") {
+          filteredData.sort((a, b) => {
+            const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+            const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+            return priceB - priceA;
+          });
         }
 
         // Update filtered results count
@@ -88,9 +110,15 @@ $(document).ready(function() {
       }
 
       // Initial sorting and filtering on page load
-      var sortOption = "az"; // Default: Sort A-Z
+      var sortOption = "az"; // Default: Sort Title A-Z
       var selectedType = ""; // Default: Show all types
       filterData(selectedType);
+
+      // Handle search input keyup event
+      $("#searchInput").on("keyup", function() {
+        var searchQuery = $(this).val();
+        filterData(selectedType, searchQuery);
+      });
 
       // Handle sort dropdown change event
       $("#sortDropdown").change(function() {

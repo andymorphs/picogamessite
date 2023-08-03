@@ -98,8 +98,6 @@ $(document).ready(function() {
         for (var i = 0; i < filteredData.length; i++) {
           var dataItem = filteredData[i];
 
-          console.log(dataItem.type.split("|"));
-
 // Split the dataItem.type
   var types = dataItem.type.split("|");
 

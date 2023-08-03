@@ -4,10 +4,10 @@ const ctx = document.getElementById('myChart');
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['Feb','Mar','Apr','May','Jun'],
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Views on YouTube',
+        data: [76888 , 85791, 63807, 73144, 131962],
         borderWidth: 1
       }]
     },

@@ -162,4 +162,5 @@ select#filterDropdown {
     .padding-right{padding: 0.5rem 0rem;}
     .flex {flex-wrap: wrap;}
     .padding-x4{padding: 2rem 0;}
+    .center {text-align: left;}
 }

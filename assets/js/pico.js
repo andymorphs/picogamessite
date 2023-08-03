@@ -97,12 +97,12 @@ $(document).ready(function() {
         // Create divs for each row based on sorted filteredData
         for (var i = 0; i < filteredData.length; i++) {
           var dataItem = filteredData[i];
-          var tr_html = '<div class="row-col" data-id="name">' +
+          var tr_html = '<div class="row-col" data-id="">' +
                             //'<div class="image-icon" style="background-image: url(/images/' + lowert +'.jpg), url(/images/placeholder-images-image_large.png)"></div>' +
                             '<div class="col" data-id="name">' + dataItem.title +'</div>' +
-                            '<div class="col" data-id="time">' + dataItem.price +'</div>' + 
-                            '<div class="col" data-id="time">' + dataItem.type +'</div>' +   
-                            '<div class="col" data-id="time">' + dataItem.date +'</div>' +    
+                            '<div class="col" data-id="price">' + dataItem.price +'</div>' + 
+                            '<div class="col" data-id="type">' + dataItem.type +'</div>' +   
+                            '<div class="col" data-id="date">' + dataItem.date +'</div>' +    
                           '</div>';
 
           outputDiv.append(tr_html);

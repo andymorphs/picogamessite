@@ -104,6 +104,10 @@ select#filterDropdown {
     /* align-items: flex-end; */
 }
 
+.col[data-id="price"] {
+    text-align: center;
+}
+
 @media screen and (max-width: 600px){
     .site-nav a {
         color: #000000!important;

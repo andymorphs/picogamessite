@@ -85,6 +85,24 @@ select#filterDropdown {
 
 .padding-left{padding-left: 1rem;}
 .padding-right{padding-right: 1rem;}
+.margin-top{margin-top: 1rem;}
+.space{padding: 0 0.3rem;}
+
+.result-count {
+    display: flex;
+    /* align-self: end; */
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.result-count p {
+    color: #ffffff;
+    background: #666666;
+    display: flex;
+    padding: 0.1rem 1rem;
+    border-radius: 0.3rem;
+    /* align-items: flex-end; */
+}
 
 @media screen and (max-width: 600px){
     .site-nav a {
@@ -97,4 +115,5 @@ select#filterDropdown {
     .padding-left{padding: 0.5rem 0rem;}
     .padding-right{padding: 0.5rem 0rem;}
     .flex {flex-wrap: wrap;}
+    .padding-x4{padding: 2rem 0;}
 }

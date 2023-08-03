@@ -45,7 +45,7 @@ $(document).ready(function() {
       // Populate the filterDropdown with unique types and remove spaces
       var filterDropdown = $("#filterDropdown");
       filterDropdown.empty(); // Clear previous options
-      filterDropdown.append('<option value="">All Types</option>');
+      filterDropdown.append('<option value="">Filter by Type</option>');
       uniqueTypesArray.forEach(type => {
         var option = $("<option></option>").attr("value", type).text(type);
         filterDropdown.append(option);

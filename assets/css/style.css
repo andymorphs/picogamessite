@@ -14,6 +14,8 @@ p {
 background: #f3f3f3;
 }
 
+.flex{display: flex;}
+
 .padding-x4{padding: 4rem 0;
 }
 
@@ -41,11 +43,16 @@ background: #f3f3f3;
     flex-basis: 25%;
 }
 
+.size-30 {
+    flex-basis: 33%;
+}
+
 .btn {
     background: #3d63ff;
     color: #ffffff!important;
-    padding: 0.1rem 0.7rem 0.2rem 0.7rem;
+    padding: 1rem;
     border-radius: 0.2rem;
+    display: inline-block;
 }
 
 .btn:hover, .btn:active, .btn:visited{
@@ -53,8 +60,40 @@ background: #f3f3f3;
     background: #123adf;
 }
 
+
+#searchInput {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 3px solid #3d63ff;
+    flex-basis: 100%;
+}
+
+select#sortDropdown {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 3px solid #3d63ff;
+    width: 100%;
+}
+
+select#filterDropdown {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 3px solid #3d63ff;
+    width: 100%;
+}
+
+.padding-left{padding-left: 1rem;}
+.padding-right{padding-right: 1rem;}
+
 @media screen and (max-width: 600px){
     .site-nav a {
         color: #000000!important;
     }
+    .size-30 {
+    flex-basis: 100%;
+    }
+
+    .padding-left{padding: 0.5rem 0rem;}
+    .padding-right{padding: 0.5rem 0rem;}
+    .flex {flex-wrap: wrap;}
 }

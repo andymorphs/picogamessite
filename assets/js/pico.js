@@ -110,7 +110,7 @@ $(document).ready(function() {
       }
 
       // Initial sorting and filtering on page load
-      var sortOption = "az"; // Default: Sort Title A-Z
+      var sortOption = "newest-date"; // Default: Sort Date Newest First
       var selectedType = ""; // Default: Show all types
       filterData(selectedType);
 

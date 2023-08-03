@@ -1,3 +1,22 @@
+h1 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.bg-alt{
+background: #f3f3f3;
+}
+
+.padding-x4{padding: 4rem 0;
+}
+
 .site-header {
     background:#3d63ff;
     color:#ffffff;
@@ -20,6 +39,18 @@
 
 .col {
     flex-basis: 25%;
+}
+
+.btn {
+    background: #3d63ff;
+    color: #ffffff!important;
+    padding: 0.1rem 0.7rem 0.2rem 0.7rem;
+    border-radius: 0.2rem;
+}
+
+.btn:hover, .btn:active, .btn:visited{
+    text-decoration: none;
+    background: #123adf;
 }
 
 @media screen and (max-width: 600px){

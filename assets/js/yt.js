@@ -1,5 +1,5 @@
 // Get Subscribers
-    const youtubeKey = 'AIzaSyCIMRVVOLk_4o3HG1NrxDQTex3VRgDbq9o';
+    const youtubeKey = 'AIzaSyDUPE07TGUM9_9wAV21P1wwJ2VF9hng9y4';
     const youtubeUser = 'UCt-nBCm1hDI5KVVaXWAR_Ng';
     const subCount = document.getElementById('subCount');
 

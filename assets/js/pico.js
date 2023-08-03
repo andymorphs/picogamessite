@@ -97,11 +97,22 @@ $(document).ready(function() {
         // Create divs for each row based on sorted filteredData
         for (var i = 0; i < filteredData.length; i++) {
           var dataItem = filteredData[i];
-          var tr_html = '<div class="row-col" data-id="">' +
+
+          console.log(dataItem.type.split("|"));
+
+// Split the dataItem.type
+  var types = dataItem.type.split("|");
+
+  // Create spans for each type
+  var typeSpans = types.map(function(type) {
+    return '<span class="type">' + type + '</span>';
+  }).join(' ');
+
+          var tr_html = '<div class="row-col" data-id="name">' +
                             //'<div class="image-icon" style="background-image: url(/images/' + lowert +'.jpg), url(/images/placeholder-images-image_large.png)"></div>' +
                             '<div class="col" data-id="name">' + dataItem.title +'</div>' +
                             '<div class="col" data-id="price">' + dataItem.price +'</div>' + 
-                            '<div class="col" data-id="type">' + dataItem.type +'</div>' +   
+                            '<div class="col" data-id="type">' + typeSpans +'</div>' +   
                             '<div class="col" data-id="date">' + dataItem.date +'</div>' +    
                           '</div>';
 

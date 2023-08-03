@@ -1,3 +1,5 @@
+body{font-family: 'Barlow', sans-serif!important;}
+
 h1 {
     font-size: 3rem;
 }
@@ -47,13 +49,27 @@ background: #f3f3f3;
     flex-basis: 33%;
 }
 
+i.fa-brands {
+    font-size: 1.5rem;
+    /* line-height: 1.5rem; */
+    padding-left: 0.75rem;
+}
+
+a.btn.pico i.fa-brands {
+    padding-left: 1rem;
+}
+
 .btn {
     background: #3d63ff;
     color: #ffffff!important;
     padding: 1rem;
     border-radius: 0.2rem;
-    display: inline-block;
+    vertical-align: middle;
+    /* display: inline-block; */
+    display: flex;
     margin: 0 1rem 1rem 0;
+    /* font-size: 1.5rem; */
+    /* display: flex; */
 }
 
 .btn:hover, .btn:active, .btn:visited{
@@ -92,7 +108,7 @@ select#filterDropdown {
     display: flex;
     /* align-self: end; */
     margin-top: 2rem;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .result-count p {
@@ -106,6 +122,20 @@ select#filterDropdown {
 
 .col[data-id="price"] {
     text-align: center;
+}
+
+.col[data-id="date"] {
+    text-align: right;
+}
+
+.type {
+    background: #666666;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    font-size: 0.75rem;
 }
 
 @media screen and (max-width: 600px){

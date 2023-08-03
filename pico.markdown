@@ -9,7 +9,8 @@ permalink: /pico-games/
 <h1>{{page.title}}</h1>
 
 <p>Unofficial games list of all Pico Store games. Prices may be subject to change please check official app for full details</p>
-	<a class="btn" target="_blank" href="https://apps.apple.com/gb/app/pico-vr/id1621284230">Apple App Store - Pico VR</a>
-	<a class="btn" target="_blank" href="https://play.google.com/store/apps/details?id=com.picovr.assistantphone.global&pli=1">Google Play Store - Pico VR</a>
+	<div class="flex">
+	<a class="btn pico" target="_blank" href="https://apps.apple.com/gb/app/pico-vr/id1621284230">Pico VR<i class="fa-brands fa-apple"></i></a>
+	<a class="btn pico" target="_blank" href="https://play.google.com/store/apps/details?id=com.picovr.assistantphone.global&pli=1">Pico VR<i class="fa-brands fa-google-play"></i> </a></div>
 
 </div>

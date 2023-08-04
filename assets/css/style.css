@@ -163,4 +163,11 @@ select#filterDropdown {
     .flex {flex-wrap: wrap;}
     .padding-x4{padding: 2rem 0;}
     .center {text-align: left;}
+    .site-nav .menu-icon > svg {fill: #ffffff!important;}
+    .site-nav {background-color: transparent!important;border: 0!important;text-align: center!important;}
+    .site-nav label[for=nav-trigger] {margin-bottom: 11px;}
+    .site-nav input:checked ~ .trigger {background: #3d63ff; margin-right: -15px;}
+    .site-nav input:checked ~ .trigger a {color: #ffffff!important;}
+    .site-nav .page-link {margin-left: 20px; margin-right: 20px;}
+
 }

@@ -162,7 +162,6 @@ select#filterDropdown {
     .padding-right{padding: 0.5rem 0rem;}
     .flex {flex-wrap: wrap;}
     .padding-x4{padding: 2rem 0;}
-    .center {text-align: left;}
     .site-nav .menu-icon > svg {fill: #ffffff!important;}
     .site-nav {background-color: transparent!important;border: 0!important;text-align: center!important;}
     .site-nav label[for=nav-trigger] {margin-bottom: 11px;}

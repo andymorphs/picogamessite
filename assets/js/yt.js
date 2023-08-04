@@ -11,17 +11,17 @@ fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCNX88l
         const viewCount = data.items[0]?.statistics?.viewCount;
         const videoCount = data.items[0]?.statistics?.videoCount;
         if (subscriberCount) {
-            document.getElementById('subscriber-count').textContent = `Total Sub count: ${subscriberCount}`;
+            document.getElementById('subscriber-count').textContent = `Subs: ${subscriberCount}`;
         } else {
             document.getElementById('subscriber-count').textContent = `Error: Unable to fetch subscriber count.`;
         }
         if (viewCount) {
-            document.getElementById('view-count').textContent = `Total Sub count: ${viewCount}`;
+            document.getElementById('view-count').textContent = `Views: ${viewCount}`;
         } else {
             document.getElementById('view-count').textContent = `Error: Unable to fetch subscriber count.`;
         }
         if (videoCount) {
-            document.getElementById('video-count').textContent = `Total Sub count: ${videoCount}`;
+            document.getElementById('video-count').textContent = `Videos: ${videoCount}`;
         } else {
             document.getElementById('video-count').textContent = `Error: Unable to fetch subscriber count.`;
         }

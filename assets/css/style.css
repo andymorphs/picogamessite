@@ -168,6 +168,7 @@ select#filterDropdown {
     .site-nav label[for=nav-trigger] {margin-bottom: 11px;}
     .site-nav input:checked ~ .trigger {background: #3d63ff; margin-right: -15px;}
     .site-nav input:checked ~ .trigger a {color: #ffffff!important;}
-    .site-nav .page-link {margin-left: 20px; margin-right: 20px;}
+    .site-nav .page-link {margin-left: 20px; margin-right: 20px; font-size: 20px!important;}
+    .site-nav .page-link {padding: 0.7rem!important;}
 
 }

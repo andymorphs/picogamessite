@@ -3,6 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: Andy Morphs
+description: I make VR content.
 ---
 
 <div class="wrapper">

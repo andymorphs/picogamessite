@@ -5,7 +5,9 @@
 layout: home
 title: Andy Morphs
 description: I make VR content.
+image: /assets/images/AndyMorphs.jpg
 ---
+
 
 <div class="wrapper">
 <h1>{{site.title}}</h1>

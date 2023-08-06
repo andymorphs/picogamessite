@@ -2,6 +2,7 @@
 layout: pico
 title: Pico Games List
 description: All the current available games on the Pico Store.
+image: /assets/images/AndyMorphs.jpg
 permalink: /pico-games/
 ---
 
